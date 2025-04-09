@@ -4,7 +4,7 @@ export const getProduct = async (req, res, next) => {
   try {
     const { barcodeNumber } = req.query;
     const productDetails = await Product.findOne({ barcodeNumber });
-    res.status(200).send(productDetails);
+    res.status(200).send(JSON.stringify(productDetails));
   } catch (e) {
     res
       .status(500)
