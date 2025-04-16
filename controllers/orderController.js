@@ -3,9 +3,9 @@ import Order from "../models/Order.js";
 export const addOrder = async (req, res) => {
   try {
     const order = {
-      userId: req?.user?.userId,
-      items: req?.user?.items,
-      total: req?.user?.total,
+      userId: req?.body?.userId,
+      items: req?.body?.items,
+      total: req?.body?.total,
     };
     const updatedOrder = await Order.insertOne(order);
     return res
