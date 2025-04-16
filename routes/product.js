@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get("/getProduct", getProduct);
 router.post("/signup", signUp);
-router.post("/login", login);
+router.get("/login", login);
 router.post("/addorder", authenticateToken, addOrder);
 router.get("/getorders", authenticateToken, getOrders);
 

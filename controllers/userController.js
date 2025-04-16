@@ -7,7 +7,7 @@ export const signUp = async (req, res) => {
     const { email, password } = req?.body || {};
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await User.insertOne({ email, password: hashedPassword });
-    res.json({ ...user, message: "User created" });
+    res.json({ message: "User created successfully" });
   } catch (e) {
     console.log(e);
   }
@@ -29,7 +29,7 @@ export const login = async (req, res) => {
     }
 
     const token = jwt.sign({ id: user._id });
-    return res.json({ token });
+    return res.json({ token, email: user?.email });
   } catch (e) {
     console.log(e);
   }
