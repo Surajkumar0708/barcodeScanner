@@ -7,9 +7,9 @@ export const addOrder = async (req, res) => {
       items: req?.body?.items,
       total: req?.body?.total,
     };
-    const updatedOrder = await Order.find({ userId: req.user.id });
+    const updatedOrder = await Order.insertOne(order);
     return res
-      .sendStatus(200)
+      .status(200)
       .json({ message: "Order saved", order: updatedOrder });
   } catch (e) {}
 };
