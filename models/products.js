@@ -6,18 +6,7 @@ const ProductSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  productName: {
-    type: String,
-    trim: true,
-  },
-  price: {
-    type: Number,
-  },
-  description: {
-    type: String,
-    trim: true,
-  },
-  category: {
+  name: {
     type: String,
     trim: true,
   },
@@ -25,11 +14,33 @@ const ProductSchema = new mongoose.Schema({
     type: String,
     trim: true,
   },
-  imageUrl: {
+  category: {
+    type: String,
+    trim: true,
+  },
+  price: {
+    type: Number,
+  },
+  mrp: {
+    type: Number,
+  },
+  unit: {
+    type: String,
+    trim: true,
+  },
+  description: {
+    type: String,
+    trim: true,
+  },
+  image: {
     type: String,
   },
-  barcodeNumber: {
+  barcode: {
     type: String,
+    trim: true,
+  },
+  expiryDate: {
+    type: Date,
     trim: true,
   },
   createdAt: {
