@@ -4,8 +4,8 @@ export const addOrder = async (req, res) => {
   try {
     const order = {
       userId: req?.user?.id,
-      items: req?.user?.items,
-      total: req?.user?.total,
+      items: req?.body?.items,
+      total: req?.body?.total,
     };
     return res.sendStatus(200).json({ message: "Order saved", order });
   } catch (e) {}

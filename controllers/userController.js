@@ -18,7 +18,6 @@ export const login = async (req, res) => {
     const { email = "", password = "" } = req.body || {};
 
     const user = await User.findOne({ email });
-    console.log("==========email", email, password, "user", user);
     if (!user) {
       return res.status(401).send({ error: `${email} is not available` });
     }
