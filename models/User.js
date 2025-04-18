@@ -7,6 +7,12 @@ const UserSchema = new mongoose.Schema({
     unique: true,
   },
   password: String,
+  fullName: {
+    type: String,
+  },
+  age: {
+    type: Number,
+  },
 });
 
 const User = mongoose.model("User", UserSchema);
